@@ -14,13 +14,14 @@ const navBar = document.querySelector(".page__header");
  * 
 */
 /** need to set timeout to hide nav after initial load.  */
-function hideNav() {
-  navBar.classList.add("hidden");
-}
 
-function showNav(){
-  clearTimeout(navTimer);
-}
+let hideNav = () => navBar.classList.add("hidden");
+
+let showNav = () => clearTimeout(navTimer);
+
+
+
+
 
 const navTimer = setTimeout(function () {hideNav();}, 5000);
 
@@ -48,6 +49,7 @@ function makeActive() {
     }
   }
 }
+
 
 // build the nav
 for (section of sections) {
@@ -82,3 +84,8 @@ document.addEventListener("scroll", function () {
     hideNav();
   }, 5000);;
 });
+
+
+
+
+
