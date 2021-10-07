@@ -89,3 +89,9 @@ document.addEventListener("scroll", function () {
 
 
 
+// function scrolly() {
+//   e.classList.remove("active");
+//   let id = nav.getAttribute("class");
+//   let targetSec = document.getElementById(id);
+//   targetSec.scrollIntoView();
+// }
