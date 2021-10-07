@@ -55,7 +55,7 @@ function makeActive() {
 for (section of sections) {
   /**Creates new nav item "li"*/
   const newElement = document.createElement("li");
-  // newElement.addEventListener("click", function changeClass(evt) {evt.target.classList.toggle("active-class");});
+  newElement.addEventListener("click", function(event){event.preventDefault(); scrolly(event);});
   newElement.classList.add(section.id);
   /**creates new anchor tag*/
   const newAnchor = document.createElement("a");
@@ -89,9 +89,9 @@ document.addEventListener("scroll", function () {
 
 
 
-// function scrolly() {
-//   e.classList.remove("active");
-//   let id = nav.getAttribute("class");
-//   let targetSec = document.getElementById(id);
-//   targetSec.scrollIntoView();
-// }
+function scrolly(event) {
+  event.target.classList.remove("active");
+  let x = event.target.classList;
+  let targetSec = document.getElementById({x});
+  targetSec.scrollIntoView({ behavior: "smooth" });
+}
