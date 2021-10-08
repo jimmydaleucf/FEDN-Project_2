@@ -63,7 +63,7 @@ for (section of sections) {
   let sectionName = section.dataset.nav;
   /**creates id for the new nav item */
   let navName = section.id + "nav";
-  newAnchor.setAttribute("href", "index.html#" + section.id);
+  newAnchor.setAttribute("href", "#" + section.id);
   newAnchor.innerText = sectionName;
   newElement.setAttribute("id", navName);
   newElement.appendChild(newAnchor);
@@ -90,8 +90,8 @@ document.addEventListener("scroll", function () {
 
 
 function scrolly(event) {
+  const navigateToId = event.target.getAttribute("href");
+  const section = document.querySelector(navigateToId);
   event.target.classList.remove("active");
-  let x = event.target.classList;
-  let targetSec = document.getElementById({x});
-  targetSec.scrollIntoView({ behavior: "smooth" });
+  section.scrollIntoView({ behavior: "smooth" });
 }
