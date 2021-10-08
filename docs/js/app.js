@@ -13,16 +13,9 @@ const navBar = document.querySelector(".page__header");
 * Start Helper Functions
  * 
 */
-/** need to set timeout to hide nav after initial load.  */
-
+/**hide nav*/
 let hideNav = () => navBar.classList.add("hidden");
-
 let showNav = () => clearTimeout(navTimer);
-
-
-
-
-
 const navTimer = setTimeout(function () {hideNav();}, 5000);
 
 /**
@@ -72,10 +65,6 @@ for (section of sections) {
 /**creates an object with all the nav items in it */
 const navItems = document.getElementById("navbar__list").querySelectorAll("li");
 
-// Add class 'active' to section when near top of viewport
-
-
-
 // listen for scroll and then check element position and show the nav. reset timer until next scroll. 
 document.addEventListener("scroll", function () {
   makeActive();
@@ -88,7 +77,7 @@ document.addEventListener("scroll", function () {
 
 
 
-
+/** function to scroll to active section when a nav click occurs */
 function scrolly(event) {
   const navigateToId = event.target.getAttribute("href");
   const section = document.querySelector(navigateToId);
