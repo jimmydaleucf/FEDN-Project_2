@@ -51,15 +51,16 @@ for (section of sections) {
   newElement.addEventListener("click", function(event){event.preventDefault(); scrolly(event);});
   newElement.classList.add(section.id);
   /**creates new anchor tag*/
-  const newAnchor = document.createElement("a");
+  const newDiv = document.createElement("div");
+  newDiv.classList.add("navItem");
   /**creates variable "sectionname" and assigns it the value from the "data-nav element" */
   let sectionName = section.dataset.nav;
   /**creates id for the new nav item */
   let navName = section.id + "nav";
-  newAnchor.setAttribute("href", "#" + section.id);
-  newAnchor.innerText = sectionName;
+  newDiv.setAttribute( "id", "#" + section.id);
+  newDiv.innerText = sectionName;
   newElement.setAttribute("id", navName);
-  newElement.appendChild(newAnchor);
+  newElement.appendChild(newDiv);
   list.appendChild(newElement);
 }
 /**creates an object with all the nav items in it */
@@ -79,7 +80,8 @@ document.addEventListener("scroll", function () {
 
 /** function to scroll to active section when a nav click occurs */
 function scrolly(event) {
-  const navigateToId = event.target.getAttribute("href");
+  const navigateToId = event.target.getAttribute("id");
+  targetSection = navigateToId.substring(1);
   const section = document.querySelector(navigateToId);
   event.target.classList.remove("active");
   section.scrollIntoView({ behavior: "smooth" });

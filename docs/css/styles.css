@@ -22,6 +22,11 @@ a {
     color: #fff;
     transition: ease 0.3s all;
 }
+
+.navItem{
+    color:white;
+    cursor: pointer;
+}
 @media only screen and (min-width: 35em){
     .navbar__menu li{
     font-size: 1em;
