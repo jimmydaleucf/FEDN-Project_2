@@ -15,7 +15,9 @@ const navBar = document.querySelector(".page__header");
 */
 /**hide nav*/
 let hideNav = () => navBar.classList.add("hidden");
-let showNav = () => clearTimeout(navTimer);
+function showNav() {
+  return clearTimeout(navTimer);
+}
 const navTimer = setTimeout(function () {hideNav();}, 5000);
 
 /**
@@ -48,7 +50,7 @@ function makeActive() {
 for (section of sections) {
   /**Creates new nav item "li"*/
   const newElement = document.createElement("li");
-  newElement.addEventListener("click", function(event){event.preventDefault(); scrolly(event);});
+  newElement.addEventListener("click", (event) => { event.preventDefault(); scrolly(event); });
   newElement.classList.add(section.id);
   /**creates new anchor tag*/
   const newDiv = document.createElement("div");
@@ -67,13 +69,13 @@ for (section of sections) {
 const navItems = document.getElementById("navbar__list").querySelectorAll("li");
 
 // listen for scroll and then check element position and show the nav. reset timer until next scroll. 
-document.addEventListener("scroll", function () {
-  makeActive();
-  showNav();
-  setTimeout(function () {
-    hideNav();
-  }, 5000);;
-});
+document.addEventListener("scroll", () => {
+    makeActive();
+    showNav();
+    setTimeout(() => {
+      hideNav();
+    }, 5000);;
+  });
 
 
 
