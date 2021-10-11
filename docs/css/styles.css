@@ -75,7 +75,7 @@ section {
     display: block;
     font-weight: bold;
     text-decoration: none;
-    color: #000;
+    color: white;
 }
 
 .navbar__menu li:hover {
