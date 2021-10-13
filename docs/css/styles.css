@@ -78,7 +78,10 @@ section {
     color: white;
 }
 
-
+.navbar__menu li:hover {
+    color: #fff;
+    transition: ease 0.3s all;
+}
 
 /* Header Styles */
 .page__header {
