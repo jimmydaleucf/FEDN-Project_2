@@ -79,6 +79,7 @@ section {
 }
 
 .navbar__menu li:hover {
+    /* background: rgb(19, 89, 114); */
     color: #fff;
     transition: ease 0.3s all;
 }
